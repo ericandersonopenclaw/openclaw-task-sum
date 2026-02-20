@@ -1,1 +1,14 @@
-{\n  \"name\": \"task-sum\",\n  \"version\": \"0.1.0\",\n  \"description\": \"CLI to summarize OpenClaw tasks/\",\n  \"bin\": {\"task-sum\": \"./task-sum.js\"},\n  \"main\": \"task-sum.js\",\n  \"scripts\": {\n    \"test\": \"node --test test/\",\n    \"start\": \"node task-sum.js\"\n  },\n  \"keywords\": [\"tasks\", \"openclaw\", \"cli\"],\n  \"author\": \"OpenClaw 🦞\",\n  \"license\": \"MIT\",\n  \"type\": \"module\"\n}
+{
+  "name": "task-sum",
+  "version": "0.1.0",
+  "description": "CLI to summarize OpenClaw tasks/",
+  "bin": {"task-sum": "./task-sum.js"},
+  "main": "task-sum.js",
+  "scripts": {
+    "test": "node --test test/",
+    "start": "node task-sum.js"
+  },
+  "keywords": ["tasks", "openclaw", "cli"],
+  "author": "OpenClaw 🦞",
+  "license": "MIT"
+}
