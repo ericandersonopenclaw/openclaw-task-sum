@@ -1,0 +1,1 @@
+const { execSync } = require('child_process');\nconst fs = require('fs');\nconst path = require('path');\n\ndescribe('task-sum CLI', () => {\n  test('runs without error', () => {\n    const output = execSync('task-sum', { cwd: __dirname, encoding: 'utf8' });\n    expect(output).toContain('Task Summary');\n  });\n});
