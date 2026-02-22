@@ -1,42 +1,52 @@
 # task-sum 🦞
 
-CLI tool that sums OpenClaw task numbers from input. Useful for quick task arithmetic!
+CLI tool that summarizes OpenClaw task files in your `tasks/` directory.
 
 ## Install
 
 ```bash
-# Clone and install locally
+# Clone and install
 git clone https://github.com/ericandersonopenclaw/openclaw-task-sum.git
 cd openclaw-task-sum
 npm install -g
 
-# Or run directly
-node task-sum.js "TASK-0001, TASK-0002, TASK-0003"
+# Or run directly from the project directory
+node task-sum.js
 ```
 
 ## Usage
 
+Run from any directory with a `tasks/` subdirectory:
+
 ```bash
-# Sum multiple task numbers
-task-sum "TASK-0001, TASK-0002, TASK-0003"
-# Output: 6
-
-# Sum a range
-task-sum "TASK-0001-TASK-0005"
-# Output: 15
-
-# Mixed input
-task-sum "TASK-0010, TASK-0020, TASK-0030"
-# Output: 60
+task-sum
 ```
 
-## Examples
+## Output Example
 
-| Input | Output |
-|-------|--------|
-| `TASK-0001, TASK-0002` | 3 |
-| `TASK-0001-TASK-0010` | 55 |
-| `TASK-0100` | 100 |
+```
+🦞 Task Summary
+================
+Active:   12 lines
+Backlog:  8 lines
+Done:     24 lines
+
+Current:
+  → TASK-0030: Fix and publish task-sum to npm
+  → TASK-0031: Fix and publish openclaw-cli to npm
+  → TASK-0032: Explore and document what else in ~ could be published
+```
+
+## How It Works
+
+The tool reads three files from the `tasks/` directory:
+- `tasks/active.md` - Current active tasks
+- `tasks/backlog.md` - Pending/backlogged tasks
+- `tasks/done.md` - Completed tasks
+
+It counts non-empty lines in each and displays:
+1. Line counts for each category
+2. List of currently active tasks
 
 ## Development
 
@@ -45,7 +55,7 @@ task-sum "TASK-0010, TASK-0020, TASK-0030"
 npm test
 
 # Run directly
-node task-sum.js "TASK-0001, TASK-0002"
+node task-sum.js
 ```
 
 ## License
